@@ -38,9 +38,9 @@ function plot_links(p, a1, a2, a3, a4, b1, b2, b3, b4, j1, j2, j3, j4)
     text(b1(1, 1), b1(2, 1), b1(3, 1), "B1");
     
     txtPos = calc_midpoint(a1, j1);
-    text(txtPos(1, 1), txtPos(2, 1), txtPos(3, 1), num2str(a1j1, 2));
+    text(txtPos(1, 1), txtPos(2, 1), txtPos(3, 1), sprintf("%d", a1j1));
     txtPos = calc_midpoint(j1, b1);
-    text(txtPos(1, 1), txtPos(2, 1), txtPos(3, 1), num2str(j1b1, 2));
+    text(txtPos(1, 1), txtPos(2, 1), txtPos(3, 1), sprintf("%d", j1b1));
     
     hold on
   endif
@@ -57,9 +57,9 @@ function plot_links(p, a1, a2, a3, a4, b1, b2, b3, b4, j1, j2, j3, j4)
     text(b2(1, 1), b2(2, 1), b2(3, 1), "B2");
     
     txtPos = calc_midpoint(a2, j2);
-    text(txtPos(1, 1), txtPos(2, 1), txtPos(3, 1), num2str(a2j2, 2));
+    text(txtPos(1, 1), txtPos(2, 1), txtPos(3, 1), sprintf("%d", a2j2));
     txtPos = calc_midpoint(j2, b2);
-    text(txtPos(1, 1), txtPos(2, 1), txtPos(3, 1), num2str(j2b2, 2));
+    text(txtPos(1, 1), txtPos(2, 1), txtPos(3, 1), sprintf("%d", j2b2));
     
     hold on
   endif
@@ -76,9 +76,9 @@ function plot_links(p, a1, a2, a3, a4, b1, b2, b3, b4, j1, j2, j3, j4)
     text(b3(1, 1), b3(2, 1), b3(3, 1), "B3");
     
     txtPos = calc_midpoint(a3, j3);
-    text(txtPos(1, 1), txtPos(2, 1), txtPos(3, 1), num2str(a3j3, 2));
+    text(txtPos(1, 1), txtPos(2, 1), txtPos(3, 1), sprintf("%d", a3j3));
     txtPos = calc_midpoint(j3, b3);
-    text(txtPos(1, 1), txtPos(2, 1), txtPos(3, 1), num2str(j3b3, 2));
+    text(txtPos(1, 1), txtPos(2, 1), txtPos(3, 1), sprintf("%d", j3b3));
     
     hold on
   endif
@@ -95,9 +95,9 @@ function plot_links(p, a1, a2, a3, a4, b1, b2, b3, b4, j1, j2, j3, j4)
     text(b4(1, 1), b4(2, 1), b4(3, 1), "B4");
     
     txtPos = calc_midpoint(a4, j4);
-    text(txtPos(1, 1), txtPos(2, 1), txtPos(3, 1), num2str(a4j4, 2));
+    text(txtPos(1, 1), txtPos(2, 1), txtPos(3, 1), sprintf("%d", a4j4));
     txtPos = calc_midpoint(j4, b4);
-    text(txtPos(1, 1), txtPos(2, 1), txtPos(3, 1), num2str(j4b4, 2));
+    text(txtPos(1, 1), txtPos(2, 1), txtPos(3, 1), sprintf("%d", j4b4));
     hold off
   endif
   
