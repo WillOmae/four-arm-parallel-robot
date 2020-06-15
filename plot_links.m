@@ -4,7 +4,7 @@ function plot_links(p, a1, a2, a3, a4, b1, b2, b3, b4, j1, j2, j3, j4)
   Y = [a2(2, 1), a2(2, 1), a4(2, 1), a4(2, 1), a2(2, 1)];
   Z = [0, 0, 0, 0, 0];
   plot3(X, Y, Z);
-  text(0, 0, 0, ["O (" num2str(0) "," num2str(0) "," num2str(0) ")"]);
+  text(0, 0, 0, sprintf("O (%d, %d, %d)", 0, 0, 0));
   hold on
   
   % draw the secondary platform
@@ -12,7 +12,7 @@ function plot_links(p, a1, a2, a3, a4, b1, b2, b3, b4, j1, j2, j3, j4)
   Y = [b2(2, 1), b2(2, 1), b4(2, 1), b4(2, 1), b2(2, 1)];
   Z = [p(3, 1), p(3, 1), p(3, 1), p(3, 1), p(3, 1)];
   plot3(X, Y, Z);
-  text(p(1, 1), p(2, 1), p(3, 1), ["P (" num2str(p(1, 1)) "," num2str(p(2, 1)) "," num2str(p(3, 1)) ")"]);
+  text(p(1, 1), p(2, 1), p(3, 1), sprintf("P (%d, %d, %d)", p(1, 1), p(2, 1), p(3, 1)));
   hold on
   
   % primary arm lengths
