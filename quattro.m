@@ -1,13 +1,14 @@
 % x-axis-> out of screen
 % y-axis-> horizontal
 % z-axis-> vertical
+% all units are in mm
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% design parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % plate dimensions
-r1 = 20; % radius of baseplate
-r2 = 10; % radius of secondary platform
+r1 = 200; % radius of baseplate
+r2 = 100; % radius of secondary platform
 % positions of motors/revolute joints
 a1 = [r1; 0; 0]; % position of first motor/revolute joint
 a2 = [0; r1; 0]; % position of second motor/revolute joint
@@ -19,12 +20,12 @@ b2 = [0; r2; 0]; % attachment of second arm
 b3 = [-r2; 0; 0]; % attachment of third arm
 b4 = [0; -r2; 0]; % attachment of fourth arm
 % arm lengths
-L1 = 30; % primary arm length
-L2 = 53; % secondary arm length
+L1 = 300; % primary arm length
+L2 = 530; % secondary arm length
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% output parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-p = [15; 25; -40]; % end-effector position
+p = [150; 250; -400]; % end-effector position
 %SRot = (30); % angle of rotation of end-effector about Y-axis
 %R = [cosd(SRot), 0, sind(SRot); 0, 1, 0; -sind(SRot), 0, cosd(SRot)]; % rotation matrix
 %
