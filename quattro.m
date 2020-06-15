@@ -26,9 +26,9 @@ L2 = 530; % secondary arm length
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% output parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 p = [150; 250; -400]; % end-effector position
-%SRot = (30); % angle of rotation of end-effector about Y-axis
-%R = [cosd(SRot), 0, sind(SRot); 0, 1, 0; -sind(SRot), 0, cosd(SRot)]; % rotation matrix
-%
+SRot = (30) % angle of rotation of end-effector about Z-axis
+R = [cosd(SRot), -sind(SRot), 0; sind(SRot), cosd(SRot), 0; 0, 0, 1] % rotation matrix
+
 %b1 = R * b1;
 %b2 = R * b2;
 %b3 = R * b3;
