@@ -1,4 +1,4 @@
-function [x1, x2, z1, z2] = calc_joint_pos(R1, R2, L1, L2, Px, Py, Pz)  
+function [x1, x2, z1, z2] = calc_joint_pos(R1, R2, L1, L2, Px, Py, Pz)
  M = (2 * Pz);
  N = -(L1 ^ 2) + (L2 ^ 2) - (R2 ^ 2) + (R1 ^ 2) - (2 * Px * R2) - (Px ^ 2) - (Py ^ 2) - (Pz ^ 2);
  K = (2 * R1) - (2 * Px) - (2 * R2);
