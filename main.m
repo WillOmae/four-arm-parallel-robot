@@ -25,35 +25,33 @@ L2 = 530;                       # secondary arm length
 ################################################################################
 ############################## output parameters ###############################
 ################################################################################
-p = [150; 250; -400];           # end-effector position
-SRot = (30);                    # end-effector rotation angle about Z-axis
-R = [cosd(SRot), -sind(SRot), 0;
-     sind(SRot), cosd(SRot), 0;
-     0, 0, 1];                  # rotation matrix
-
-#b1 = R * b1;
-#b2 = R * b2;
-#b3 = R * b3;
-#b4 = R * b4;
-
-b1 = p + b1;
-b2 = p + b2;
-b3 = p + b3;
-b4 = p + b4;
+## end-effector position
+p = [20; 20; -400];
+## end-effector rotation angle about Z-axis
+rot = 180;
+## rotation matrix
+R = [cosd(rot), -sind(rot), 0;
+     sind(rot), cosd(rot), 0;
+     0, 0, 1];
+## values of b wrt reference frame
+b1 = p + R * b1;
+b2 = p + R * b2;
+b3 = p + R * b3;
+b4 = p + R * b4;
 ################################################################################
 ################################# calculations #################################
 ################################################################################
-[j1x1, j1x2, j1z1, j1z2] = calc_joint_pos(r1, r2, L1, L2, p(1, 1), p(2, 1), p(3, 1));
+[j1x1, j1x2, j1z1, j1z2] = calc_joint_pos(rot, r1, r2, L1, L2, p(1, 1), p(2, 1), p(3, 1), 1);
 j1 = [j1x1; 0; j1z1];
 
-[j2y1, j2y2, j2z1, j2z2] = calc_joint_pos(r1, r2, L1, L2, p(2, 1), p(1, 1), p(3, 1));
+[j2y1, j2y2, j2z1, j2z2] = calc_joint_pos(rot, r1, r2, L1, L2, p(2, 1), p(1, 1), p(3, 1), -1);
 j2 = [0; j2y1; j2z1];
 
-[j3x1, j3x2, j3z1, j3z2] = calc_joint_pos(-r1, -r2, L1, L2, p(1, 1), p(2, 1), p(3, 1));
+[j3x1, j3x2, j3z1, j3z2] = calc_joint_pos(rot, -r1, -r2, L1, L2, p(1, 1), p(2, 1), p(3, 1), 1);
 j3 = [j3x2; 0; j3z2];
 
-[j4y1, j4y2, j4z1, j4z2] = calc_joint_pos(-r1, -r2, L1, L2, p(2, 1), p(1, 1), p(3, 1));
+[j4y1, j4y2, j4z1, j4z2] = calc_joint_pos(rot, -r1, -r2, L1, L2, p(2, 1), p(1, 1), p(3, 1), -1);
 j4 = [0; j4y2; j4z2];
 
 ## plot
-plot_links(p, a1, a2, a3, a4, b1, b2, b3, b4, j1, j2, j3, j4);
+plot_links(rot, r2, p, a1, a2, a3, a4, b1, b2, b3, b4, j1, j2, j3, j4);

@@ -1,4 +1,4 @@
-function plot_links(p, a1, a2, a3, a4, b1, b2, b3, b4, j1, j2, j3, j4)
+function plot_links(rot, r2, p, a1, a2, a3, a4, b1, b2, b3, b4, j1, j2, j3, j4)
  # draw the baseplate
  X = [a1(1, 1), a3(1, 1), a3(1, 1), a1(1, 1), a1(1, 1)];
  Y = [a2(2, 1), a2(2, 1), a4(2, 1), a4(2, 1), a2(2, 1)];
@@ -9,8 +9,10 @@ function plot_links(p, a1, a2, a3, a4, b1, b2, b3, b4, j1, j2, j3, j4)
  hold on
  
  # draw the secondary platform
- X = [b1(1, 1), b3(1, 1), b3(1, 1), b1(1, 1), b1(1, 1)];
- Y = [b2(2, 1), b2(2, 1), b4(2, 1), b4(2, 1), b2(2, 1)];
+ R2sin = r2 * sind(rot);
+ R2cos = r2 * cosd(rot);
+ X = [b1(1, 1) - R2sin, b2(1, 1) - R2cos, b3(1, 1) + R2sin, b4(1, 1) + R2cos, b1(1, 1) - R2sin];
+ Y = [b1(2, 1) + R2cos, b2(2, 1) - R2sin, b3(2, 1) - R2cos, b4(2, 1) + R2sin, b1(2, 1) + R2cos];
  Z = [p(3, 1), p(3, 1), p(3, 1), p(3, 1), p(3, 1)];
  plot3(X, Y, Z);
  txt = sprintf("P (%d, %d, %d)", p(1, 1), p(2, 1), p(3, 1));

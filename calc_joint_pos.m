@@ -1,7 +1,9 @@
-function [x1, x2, z1, z2] = calc_joint_pos(R1, R2, L1, L2, Px, Py, Pz)
+function [x1, x2, z1, z2] = calc_joint_pos(rot, R1, R2, L1, L2, Px, Py, Pz, mul)
+ A = R2 * cosd(rot);
+ B = mul * R2 * sind(rot);
  M = (2 * Pz);
- N = -(L1 ^ 2) + (L2 ^ 2) - (R2 ^ 2) + (R1 ^ 2) - (2 * Px * R2) - (Px ^ 2) - (Py ^ 2) - (Pz ^ 2);
- K = (2 * R1) - (2 * Px) - (2 * R2);
+ N = -(L1 ^ 2) + (L2 ^ 2) - (Px ^ 2) - (Py ^ 2) - (Pz ^ 2) - (2 * B * Py) - (2 * A * Px) - (B ^ 2) - (A ^ 2) + (R1 ^ 2);
+ K = (2 * R1) - (2 * Px) - (2 * A);
  E = M / K;
  F = N / K;
  ## quadratic formula
